@@ -1,0 +1,218 @@
+:root {
+    --purpleHex: 48,59,89;
+    --shadow: 5px 5px 10px 1px rgba(var(--purpleHex),0.15);
+    --reaction-color: 219, 104, 109;
+    --memory-color: 247, 186, 65;
+    --verbal-color: 45, 184, 149;
+    --visual-color: 43, 54, 194;
+    --purple-to-blue: linear-gradient(to bottom, #6743FF, #312CEA)
+}
+
+@font-face {
+	font-family: 'Hanken Grotesk Thin';
+	src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf');
+	font-weight: 100 1000;
+	font-stretch: 25% 151%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hanken Grotesk Thin';
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card {
+    display: flex;
+    max-width: 800px;
+    -webkit-box-shadow: var(--shadow);
+    -moz-box-shadow: var(--shadow);
+    box-shadow: var(--shadow);
+    border-radius: 20px;
+}
+
+.left-card {
+    background-image: linear-gradient(to bottom, #6743FF, #312CEA);
+    border-radius: 20px;
+    width: 300px;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.right-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 350px;
+}
+
+.result-title {
+    margin-bottom: 2rem;
+    font-size: 20px;
+    color: #C8C1FB;
+}
+
+.result-circle {
+    background-image: linear-gradient(to bottom, #4D22C9, #4734F0);
+    border-radius: 100px;
+    width: fit-content;
+    padding: 2.5rem 3.5rem;
+    margin: 0 auto;
+}
+
+.higher-number {
+    color: white;
+    font-size: 56px;
+    font-weight: bold;
+}
+
+.lower-number {
+    color: #817dff;
+    font-weight: bold;
+}
+
+.result-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-based-in-number-message {
+    color: white;
+    font-size: 26px;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+}
+
+.result-message-description {
+    color: #9B98FB;
+    width: 90%;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.right-card {
+    padding: 2rem;
+}
+
+.summary-title {
+    color: #2E3448;
+}
+
+.summary-card {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.reaction-text {
+    color: rgb(var(--reaction-color));
+    font-weight: bold;
+}
+.reaction {
+    background-color: rgba(var(--reaction-color), 0.1);
+}
+
+.memory-text {
+    color: rgb(var(--memory-color));
+    font-weight: bold;
+}
+
+.memory {
+    background-color: rgba(var(--memory-color), 0.1);
+}
+
+.verbal-text {
+    color: rgb(var(--verbal-color));
+    font-weight: bold;
+}
+
+.verbal {
+    background-color: rgba(var(--verbal-color), 0.1);
+}
+
+.visual-text {
+    color: rgb(var(--visual-color));
+    font-weight: bold;
+}
+
+.visual {
+    background-color: rgba(var(--visual-color), 0.1);
+}
+
+.summary-result-number {
+    color: rgb(var(--purpleHex));
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 16px;
+}
+
+.result-typo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-continue {
+    background-color: rgb(var(--purpleHex));
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    font-size: 16px;
+    border-radius: 50px;
+    border: 0;
+    transition: 1s;
+}
+
+.button-continue:hover {
+    cursor: pointer;
+}
+
+.button-continue:active {
+    background-image: linear-gradient(to bottom, #6743FF, #312CEA);
+}
+
+@media (max-width: 768px) {
+    body {
+        display: block;
+    }
+    .card {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .left-card, .right-card {
+        border-radius: 0;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        width: 100%;
+    }
+
+    .result-title {
+        margin-bottom: 1rem;
+    }
+
+    .result-based-in-number-message {
+        margin: 1rem 0;
+    }
+
+    .result-circle {
+        padding: 1.5rem 2.5rem;
+    }
+}
