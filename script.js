@@ -1,18 +1,10 @@
 import data from './data.json' assert {type: 'json'};
 
-data.forEach(currentItem => {
+for (const currentItem of data) {
     const summaryElement = document.getElementById(currentItem.category);
     const summaryResultElement = summaryElement.querySelector('.result-number');
-    setScore(currentItem, summaryResultElement);
-    setImageFromSvg(currentItem, summaryElement);
-});
-
-function setScore(currentItem, summaryElement)  {
-    const summaryResultElement = summaryElement.querySelector('.summary-result-number');
-    summaryResultElement.innerHTML = currentItem.score;
-}
-
-function setImageFromSvg(currentItem, summaryElement) {
-    const summaryImageElement = summaryElement.querySelector('.result-typo').querySelector('.icon');
+    const summaryImageElement = summaryElement.querySelector('.result-typo .icon');
+    
+    summaryResultElement.textContent = currentItem.score;
     summaryImageElement.src = currentItem.icon;
 }
